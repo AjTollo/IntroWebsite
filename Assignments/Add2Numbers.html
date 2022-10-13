@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add2Numbers</title>
+    <style>
+        *{
+        margin: 0px;
+        padding: opx;
+        box-sizing: border-box;
+        }
+
+        nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #16191c;
+        min-height: 8vh;
+        }
+        .logo a{
+        letter-spacing: 5px;
+        font-size: 20px;
+        font-family: Arial; 
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        }
+        .nav-links{
+        display: flex;
+        justify-content: space-around;
+        width: 40%;
+        }
+        .nav-links li{ 
+        list-style: none;
+        }
+        .nav-links a{
+        color: white;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-weight: bold;
+        font-size: 15px;
+        font-family: Arial;
+        }
+        .content{
+          display:block;
+          max-width: 800px;
+          margin: auto;
+          margin-top: 40px;
+        }
+        .content div{
+          width: 800px;
+          height: 720px;
+          border: 5px solid black;
+          border-radius: 10px;
+          margin-bottom: 30px;
+        }
+        .v1 {
+          
+        }
+        .v2 {
+          
+        }
+        .v3 {
+          
+        }
+    </style>
+</head>
+<body>
+  <!--Navbar-->
+  <nav>
+    <div class="logo">
+      <a href="../index.html">Home</a>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="Add2Numbers.html">Add 2 Numbers</a>
+      </li>
+      <li>
+        <a href="GradeComputation.html">Grade Computation</a>
+      </li>
+      <li>
+        <a href="NaturalNumbersAndLoops.html">Natural Numbers</a>
+      </li>
+      <li>
+        <a href="ShoppingCarts.html">Shopping Carts</a>
+      </li>
+    </ul>
+  </nav>
+  <!--Assignment different Versions-->
+  <div class="content">
+    <!--Version 1-->
+    <div class="v1">
+      <h1>Add two numbers Version 1 - Using Prompts</h1>
+      <label id="sumlabel">The sum is:</label>
+      <br>
+      <button onclick="clickbtn()">Compute the sume</button>
+    </div>
+    <!--Version 2-->
+    <div class="v2">
+      <h1>Add two numbers Version 2 - Using Input and Labels</h1>
+      <label>First Number</label>
+      <input id="n1" type="number">
+      <label>First Number</label>
+      <input id="n2" type="number">
+      <button onclick="computeSum()">Compute Sum</button>
+      <p>
+        <label id="sumlabelv2">The sum is: </label>
+        <input type="number" id="sum2" readonly>
+      </p>
+    </div>
+    <!--Version 3-->
+    <div class="v3">
+      <p>
+        <h1>Add two numbers Version 3 - Using Input and Labels</h1>
+        <label>First Number</label>
+        <input id="n1" type="number">
+        <label>First Number</label>
+        <input id="n2" type="number">
+      </p>
+    </div>
+  </div>
+  <script>
+    function clickbtn() {
+      let a = '', b = '', x=0,y=0
+      a=prompt('The First Number:');
+      b=prompt('The Second Number:');
+
+      x=parseInt(a);
+      y=parseInt(b);
+
+      let z=x+y;
+      document.getElementById("sumlabel").innerHTML='The sum is: '+z;
+    }
+
+    function computeSum(){
+      var x, y;
+
+      x = document.getElementById("n1").value*1;
+      y = document.getElementById("n2").value*1;
+
+      let z = x + y;
+
+      document.getElementById("sumlabelv2").innerHTML='The sum of '+ x +' and '+y+' is:'
+      document.getElementById("sum2").value=z;
+    }
+  </script>
+</body>
+</html>
