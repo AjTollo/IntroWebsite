@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment1</title>
+    <style>
+        *{
+        margin: 0px;
+        padding: opx;
+        box-sizing: border-box;
+        }
+
+        nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #16191c;
+        min-height: 8vh;
+        }
+        .logo a{
+        letter-spacing: 5px;
+        font-size: 20px;
+        font-family: Arial; 
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        }
+        .nav-links{
+        display: flex;
+        justify-content: space-around;
+        width: 40%;
+        }
+        .nav-links li{ 
+        list-style: none;
+        }
+        .nav-links a{
+        color: white;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-weight: bold;
+        font-size: 15px;
+        font-family: Arial;
+        }
+        .content{
+          display:block;
+          max-width: 800px;
+          margin: auto;
+          margin-top: 40px;
+        }
+        footer{
+          background-color: #16191c;
+          marign:0;
+        }
+        .wrapper{
+          width: 800px;
+          height: 720px;
+          border: 5px solid black;
+          border-radius: 10px;
+          margin-bottom: 30px;
+        }
+        .description {
+          padding: 10px;
+        }
+        .innerContent{
+          
+          height: 100px;
+          margin: 100px 100px 0px 100px;
+        }
+        .converter {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          
+        }
+        .left-container{
+         display: grid;
+         padding-left: 90px;
+        }
+        .equal {
+         font-size: 50px;
+         padding-bottom: 15px;
+        }
+        .right-container{
+          display: grid;
+          padding-right: 90px;
+        }
+        .formula {
+          display: flex;
+          margin-left: 16%;
+        }
+        
+        .formula p{
+          margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+  <!--Navbar-->
+  <nav>
+    <div class="logo">
+      <a href="../index.html">Home</a>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="Assignment1.html">Assignment#1</a>
+      </li>
+      <li>
+        <a href="Assignment2.html">Assignment#2</a>
+      </li>
+      <li>
+        <a href="Assignment3.html">Assignment#3</a>
+      </li>
+      <li>
+        <a href="Assignment4.html">Assignment#4</a>
+      </li>
+    </ul>
+  </nav>
+  <!--Assignment different Versions-->
+  <div class="content">
+<!-------Celsius to Fahrenheit--------->
+    <div class="wrapper">
+      <div class="description">
+        <h1>Assignment#1</h1>
+        <h3>Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)</h3>
+      </div>
+        <div class="innerContent">
+          <div class="converter">
+            <div class="left-container">
+              <input type="number" name="celsius" id="celsius">
+              <label>Celsius</label>
+            </div>
+  
+            <p class="equal">=</p>
+        
+            <div class="right-container">
+                <input type="number" name="fahrenheit" id="fahrenheit">
+                <label>Fahrenheit</label>
+            </div>
+        </div>
+        <div class="formula">
+          <label class="label">Answer:</label>
+          <p class="equation" id="temperature-equation"></p>
+        </div>
+
+        </div>
+    
+<!-------Feet to meter--------->
+      <div class="innerContent">
+        <div class="converter">
+          <div class="left-container">
+            <input type="number" name="feet" id="feet">
+            <label>Feet</label>
+          </div>
+  
+          <p class="equal">=</p>
+      
+          <div class="right-container">
+              <input type="number" name="meters" id="meters">
+              <label>Meters</label>
+          </div>
+        </div>
+        <div class="formula">
+          <label class="label">Answer:</label>
+          <p class="equation" id="lenght-equation"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const celsius = document.getElementById("celsius")
+    const fahrenheit = document.getElementById("fahrenheit")
+    const temperatureEq = document.getElementById("temperature-equation")
+    const meter = document.getElementById("meters")
+    const feet = document.getElementById("feet")
+    const lenghtEq = document.getElementById("lenght-equation")
+
+    const convertTemp = (event) =>{
+
+      const tempType = event.target.name
+      const tempVal = event.target.value
+
+      if(tempVal === ''){
+        celsius.value = ''
+        fahrenheit.value = ''
+        temperatureEq.innerHTML = ''
+      } else if(tempType === 'celsius'){
+        const x = (tempVal * 9/5) +32
+        fahrenheit.value = x
+        temperatureEq.innerHTML = 'The ' + celsius.value + ' celsius is equivalent to ' + x + ' fahrenheit'
+      } else if(tempType === 'fahrenheit'){
+        const x = (tempVal - 32) * (5/9)
+        celsius.value = x
+        temperatureEq.innerHTML = 'The ' + fahrenheit.value + ' fahrenheit is equivalent to ' + x + ' celsius'
+      }
+    }
+
+    const convertLenght = (event)=> {
+      const lengthType = event.target.name
+      const lengthVal = event.target.value
+
+      if(lengthVal === ''){
+        feet.value = ''
+        meter.value = ''
+        lenghtEq.innerHTML = ''
+      } else if(lengthType === 'feet'){
+        const x = Math.round((lengthVal*12)*(2.54/100)*1000000)/1000000
+        meter.value = x
+        lenghtEq.innerHTML ='In ' + feet.value + ' feet is equivalent to ' + x + ' meter' 
+      } else if(lengthType === 'meters'){
+        const x = Math.round((lengthVal*100)*(1/2.54)*(1/12)*1000000)/1000000
+        feet.value = x
+        lenghtEq.innerHTML = 'In ' + meter.value + ' meter is equivalent to' + x + ' feet'
+      }
+    }
+
+    celsius.addEventListener("focus", convertTemp)
+    celsius.addEventListener("keyup",convertTemp)
+    fahrenheit.addEventListener("focus", convertTemp)
+    fahrenheit.addEventListener("keyup",convertTemp)
+    feet.addEventListener("focus",convertLenght)
+    feet.addEventListener("keyup",convertLenght)
+    meter.addEventListener("focus", convertLenght)
+    meter.addEventListener("keyup", convertLenght)
+  </script>
+</body>
+</html>
