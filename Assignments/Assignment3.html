@@ -43,6 +43,37 @@
         font-size: 15px;
         font-family: Arial;
         }
+        .content{
+          display:block;
+          max-width: 800px;
+          margin: auto;
+          margin-top: 40px;
+        }
+        
+        .wrapper{
+          width: 800px;
+          height: 720px;
+          border: 5px solid black;
+          border-radius: 10px;
+          margin-bottom: 30px;
+        }
+        .description {
+          padding: 10px;
+        }
+        .input-area{
+          display: grid;
+          justify-content: center;
+          margin-top: 30px;
+        }
+        .result {
+          display: flex;
+          justify-content: center;
+          justify-content: space-evenly;
+          margin-top: 15%;
+        }
+        .result label{
+          font-weight: bold;
+        }
     </style>
 </head>
   <body>
@@ -65,5 +96,77 @@
         </li>
       </ul>
     </nav>
+    <div class="content">
+      <div class="wrapper">
+        <div class="description">
+          <h1>Assignment#3</h1>
+          <h3>Factorial, Sum and Average of First N Natural Numbers</h3>
+        </div>
+
+        <div class="inner-content">
+          <div class="input-area">
+            <input type="number" id="number" name="number">
+            <label for="number"style="padding-left: 15px;">Input a integer value n</label>
+            <button onclick="nthFactorial(); sumFirstN(); AverageN()">Compute</button>
+          </div>
+          
+          <div class="result">
+            <div class="result-box">
+              <label>N!</label>
+              <p id="nthFac-id"></p>
+            </div>
+            <div class="result-box">
+              <label>Sum of the First N</label>
+              <p id="sumN" ></p>
+            </div>
+            
+            <div class="result-box">
+              <label>Average of the First N</label>
+              <p id="AverageN"></p>
+            </div>
+          </div>
+        </div>
+
+      </div> 
+  </div>
+  <script>
+    const integer = document.getElementById("number")
+    const res1 = document.getElementById("nthFac-id")
+    const res2 = document.getElementById("sumN")
+    const res3 = document.getElementById("AverageN")
+
+    function nthFactorial () {
+      var x = integer.value
+      let i = 1,nth = i;
+      
+      while(x >= i){
+        nth *= i  
+        i++;
+      }
+      res1.innerHTML = nth
+    }
+    function sumFirstN() {
+      var x = integer.value
+      let i = 1,nth = 0;
+
+      do{
+        nth += i  
+        i++;
+      }while(x >= i)
+      
+      res2.innerHTML = nth
+    }
+    function AverageN () {
+      var x = integer.value
+      let nth = 0;
+      
+      for(let i = 1; i < x;i++){
+        nth += i;
+      }
+      let result = nth/x
+      res3.innerHTML = result 
+    }
+
+  </script>
   </body>
 </html>
