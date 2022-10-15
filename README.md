@@ -1,6 +1,8 @@
 # CS 1130 - Intro to Computing
 by Aj R. Tollo
 
+All of the required activities in CS 1130 - Intro to Computing 
+
 ## Assignments
 
 Assignment #1:(Conversion)
@@ -18,3 +20,10 @@ Assignment #3:
 
 Assignment #4:
 * Simple Payroll
+
+## Technologies
+* HTML / CSS
+* JavaScript
+
+## Setup
+click here to see the [output](https://ajtollo.github.io/IntroWebsite/)
