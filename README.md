@@ -5,7 +5,7 @@ All of the required activities in CS 1130 - Intro to Computing
 
 ## Assignments
 
-Assignment #1:(Conversion)
+Assignment #1:
 * Celsius to Fahrenheit
 * Fahrenheit to Celsius
 * Metters to Feet 
