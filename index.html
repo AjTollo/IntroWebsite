@@ -12,6 +12,11 @@
     <div class="logo">
       <a href="index.html">Home</a>
     </div>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
     <ul class="nav-links">
       <li>
         <a href="Assignments/Assignment1.html">Assignment#1</a>
@@ -35,6 +40,14 @@
     <p>Assignment #2 - Income Tax Calculator</p>
     <p>Assignment #3 - Factorial, Sum and Average of First N Natural Numbers</p>
     <p>Assignment #4 - Simple Payroll</p>
+    <a href="https://github.com/AjTollo/IntroWebsite">See the source files</a>
   </div>
+  <script>
+     hamburger = document.querySelector(".hamburger");
+     hamburger.onclick = function() {
+        navBar = document.querySelector(".nav-links");
+        navBar.classList.toggle("active");
+     }
+  </script>
 </body>
 </html>
