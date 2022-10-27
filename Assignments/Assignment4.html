@@ -23,6 +23,7 @@
         .logo a{
           letter-spacing: 5px;
           font-size: 20px;
+          font-weight: bold;
           text-decoration: none;
           color: white;
           text-transform: uppercase;
@@ -200,11 +201,11 @@
     const deductionAmount = document.getElementById("deduction-amount")
     const employeeCount = document.getElementById("numberEmp")
     const RemoveEmp = document.getElementById("no")
-    var cart = []
+    var empList = []
 
     function initEmp(){
-      cart=[]
-      employeeCount.value = cart.length
+      empList=[]
+      employeeCount.value = empList.length
       document.getElementById("list").innerHTML= ""
     }
 
@@ -226,9 +227,9 @@
       employee.net = employee.gross - employee.deduction
 
       console.log(employee)
-      cart.push(employee)
-      employeeCount.value = cart.length
-      showCart();
+      empList.push(employee)
+      employeeCount.value = empList.length
+      showEmp();
     }
 
     function removeEmployee(){
@@ -237,9 +238,9 @@
 
       toDelete = confirm("Delete item no. "+id+"?")
       if(toDelete){
-        cart.splice(id-1,1)
-        employeeCount.value = cart.length
-        showCart()
+        empList.splice(id-1,1)
+        employeeCount.value = empList.length
+        showEmp()
       }
     }
     function removeAll(){
@@ -250,7 +251,7 @@
         initEmp()
       }
     }
-    function showCart(){
+    function showEmp(){
       var theader = "<thead>"
         +"<tr>"
         +'<th style="text-align: center">No.</th>'
@@ -264,15 +265,15 @@
         +"</thead>"
         
         var tbody = ''
-        for(let i = 0;i < cart.length; i++){
+        for(let i = 0;i < empList.length; i++){
           tbody += "<tr>"
             + '<td style="text-align: center">'+(i+1)+'</td>'
-            + '<td style="text-align: center">'+cart[i].name+'</td>'
-            + '<td style="text-align: center">'+cart[i].days+'</td>'
-            + '<td style="text-align: center">'+cart[i].rate+'</td>'
-            + '<td style="text-align: center">'+cart[i].gross+'</td>'
-            + '<td style="text-align: center">'+cart[i].deduction+'</td>'
-            + '<td style="text-align: center">'+cart[i].net+'</td>'
+            + '<td style="text-align: center">'+empList[i].name+'</td>'
+            + '<td style="text-align: center">'+empList[i].days+'</td>'
+            + '<td style="text-align: center">'+empList[i].rate+'</td>'
+            + '<td style="text-align: center">'+empList[i].gross+'</td>'
+            + '<td style="text-align: center">'+empList[i].deduction+'</td>'
+            + '<td style="text-align: center">'+empList[i].net+'</td>'
             + '</tr>'
         }
        document.getElementById("list").innerHTML="<table>"+theader+tbody+"</table>"

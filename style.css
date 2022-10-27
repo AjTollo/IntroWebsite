@@ -15,6 +15,7 @@ nav{
 .logo a{
   letter-spacing: 5px;
   font-size: 20px;
+  font-weight: bold;
   text-decoration: none;
   color: white;
   text-transform: uppercase;
